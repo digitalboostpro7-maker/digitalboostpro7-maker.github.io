@@ -6,8 +6,6 @@
 <meta name="monetag" content="576f16b0f9749df298aac9e0e88ba33f">
 <title>QuickSave Pro - Free HD Video Downloader (TikTok, Instagram, Pinterest)</title>
 <script>(function(){var s=document.createElement('script');s.src=atob('aHR0cHM6Ly9xdWdlNS5jb20vODgvdGFnLm1pbi5qcw==');s.setAttribute('data-zone','315962');s.async=true;s.setAttribute('data-cfasync','false');document.head.appendChild(s);})();</script>
-<script>(function(s){s.dataset.zone='12354596';s.src=atob('aHR0cHM6Ly9hbDVzbS5jb20vdGFnLm1pbi5qcw==');document.head.appendChild(s);})(document.createElement('script'));</script>
-<script>(function(s){s.dataset.zone='12354591';s.src=atob('aHR0cHM6Ly9hbDVzbS5jb20vdGFnLm1pbi5qcw==');document.head.appendChild(s);})(document.createElement('script'));</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
 body{background:radial-gradient(circle at top,#0f172a,#060911);color:#f8fafc;min-height:100vh;padding-bottom:50px}
@@ -25,7 +23,7 @@ input:focus{border-color:#38bdf8}
 .paste-btn{padding:0 16px;background:#1e293b;color:#38bdf8;border:1px solid #334155;border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
 .dl-btn{width:100%;padding:16px;background:linear-gradient(90deg,#2563eb,#0284c7);border:none;color:#fff;font-weight:800;border-radius:10px;font-size:16px;cursor:pointer;box-shadow:0 8px 20px rgba(37,99,235,0.35);transition:0.2s}
 .platforms{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:18px}
-.p-tag{background:#0b1120;color:#cbd5e1;padding:6px 11px;border-radius:8px;font-size:12px;font-weight:600;border:1px solid #1e293b}
+.p-tag{background:#0b1120;color:#cbd5e1;padding:6px 11px;border-radius:8px;font-size:12px;font-weight:600;border:1px solid #1e293b;cursor:pointer;text-decoration:none}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:34px}
 .step-card{background:#0f172a;padding:18px;border-radius:12px;border:1px solid #1e293b;text-align:center}
 .step-num{width:30px;height:30px;background:#1d4ed8;color:#fff;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;margin-bottom:10px}
@@ -58,11 +56,10 @@ footer{text-align:center;margin-top:36px;color:#64748b;font-size:12px}
     </div>
     <button type="button" id="dlBtn" class="dl-btn" onclick="processDownload()">⬇ Download HD Video</button>
     <div class="platforms">
-      <span class="p-tag">🎵 TikTok (No Watermark)</span>
-      <span class="p-tag">📸 Instagram Reels</span>
-      <span class="p-tag">📌 Pinterest Videos</span>
-      <span class="p-tag">🐦 X / Twitter HD</span>
-      <span class="p-tag">📱 iOS & Android</span>
+      <span class="p-tag" onclick="openOnce(1)">🎵 TikTok HD</span>
+      <span class="p-tag" onclick="openOnce(2)">📸 Instagram Reels</span>
+      <span class="p-tag" onclick="openOnce(3)">📌 Pinterest Videos</span>
+      <span class="p-tag">🐦 X / Twitter</span>
     </div>
   </div>
   <div class="steps">
@@ -96,14 +93,20 @@ footer{text-align:center;margin-top:36px;color:#64748b;font-size:12px}
 </div>
 <footer>© 2026 QuickSave Pro by Digital Boost • Privacy Policy • Terms of Service</footer>
 <script>
-  var ADS = [
-    atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjI1MTQ4OQ=='),
-    atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjIyOTQwNA=='),
-    atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjM1NDU1MA=='),
-    atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjM1NDU1NQ==')
-  ];
+  var AD_MAIN = atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjI1MTQ4OQ==');
+  var AD_TT = atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjIyOTQwNA==');
+  var AD_IG = atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjM1NDU1MA==');
+  var AD_PIN = atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjM1NDU1NQ==');
   var TOOL = atob('aHR0cHM6Ly9jb2JhbHQudG9vbHM=');
-  var step = 0;
+  var adShown = false;
+  var tagClicked = {};
+
+  function openOnce(id) {
+    if (tagClicked[id]) return;
+    tagClicked[id] = true;
+    var map = {1: AD_TT, 2: AD_IG, 3: AD_PIN};
+    window.open(map[id], "_blank");
+  }
 
   async function pasteFromClip() {
     try {
@@ -120,15 +123,13 @@ footer{text-align:center;margin-top:36px;color:#64748b;font-size:12px}
     if (!u) { alert("Please paste a valid video link first!"); return; }
     var btn = document.getElementById("dlBtn");
 
-    if (step === 0) {
-      step = 1;
+    if (!adShown) {
+      adShown = true;
       navigator.clipboard.writeText(u).catch(function(){});
-      btn.innerText = "✅ Link Ready! Tap Again to Save MP4";
+      btn.innerText = "✅ Link Verified! Click Again to Download";
       btn.style.background = "linear-gradient(90deg,#16a34a,#059669)";
-      var pickAd = ADS.at(Math.floor(Math.random() * ADS.length));
-      window.open(pickAd, "_blank");
+      window.open(AD_MAIN, "_blank");
     } else {
-      step = 0;
       btn.innerText = "⬇ Download HD Video";
       btn.style.background = "linear-gradient(90deg,#2563eb,#0284c7)";
       window.open(TOOL, "_blank");
