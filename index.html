@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="monetag" content="a4084764f54341d86be418878a20ba56">
+<meta name="monetag" content="576f16b0f9749df298aac9e0e88ba33f">
 <title>QuickSave Pro - Free HD Video Downloader (TikTok, Instagram, Pinterest)</title>
 <script>(function(){var s=document.createElement('script');s.src=atob('aHR0cHM6Ly9xdWdlNS5jb20vODgvdGFnLm1pbi5qcw==');s.setAttribute('data-zone','309562');s.async=true;s.setAttribute('data-cfasync','false');document.head.appendChild(s);})();</script>
 <style>
@@ -94,7 +94,12 @@ footer{text-align:center;margin-top:36px;color:#64748b;font-size:12px}
 </div>
 <footer>© 2026 QuickSave Pro by Digital Boost • Privacy Policy • Terms of Service</footer>
 <script>
-  var AD = atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjI1MTQ4OQ==');
+  var ADS = [
+    atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjI1MTQ4OQ=='),
+    atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjIyOTQwNA=='),
+    atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjM1NDU1MA=='),
+    atob('aHR0cHM6Ly91cGxjbS5jb20vNC8xMjM1NDU1NQ==')
+  ];
   var TOOL = atob('aHR0cHM6Ly9jb2JhbHQudG9vbHM=');
   var step = 0;
 
@@ -118,7 +123,8 @@ footer{text-align:center;margin-top:36px;color:#64748b;font-size:12px}
       navigator.clipboard.writeText(u).catch(function(){});
       btn.innerText = "✅ Link Ready! Tap Again to Save MP4";
       btn.style.background = "linear-gradient(90deg,#16a34a,#059669)";
-      window.open(AD, "_blank");
+      var pickAd = ADS.at(Math.floor(Math.random() * ADS.length));
+      window.open(pickAd, "_blank");
     } else {
       step = 0;
       btn.innerText = "⬇ Download HD Video";
