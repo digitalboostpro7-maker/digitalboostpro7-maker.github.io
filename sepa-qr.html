@@ -1,162 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="google-site-verification" content="iVjalkXLvBYutIu_K0eG2R_uotiroyV3b9hk2oXOibk" />
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free SEPA QR Code & GiroCode Generator (EPC) - Instant IBAN QR Maker</title>
-    <meta name="description" content="Free online SEPA QR Code & GiroCode generator (EPC069-12). Create instant bank transfer QR codes from IBAN & BIC without signup. Kostenlos, Gratuit, Gratis, Gratuito.">
-    <meta name="keywords" content="SEPA QR code generator, GiroCode erstellen kostenlos, EPC QR code maker, IBAN QR code generator, Générateur QR Code SEPA gratuit, Generador código QR SEPA, Generatore QR Code SEPA, SEPA QR code maken, bank transfer QR code">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://github.io">
-
-    <!-- গুগল সার্চ র‍্যাংকিংয়ের জন্য Structured Data (Schema.org) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Free SEPA QR Code & GiroCode Generator",
-      "url": "https://github.io",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "All",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR"
-      },
-      "description": "Create official EPC SEPA QR Codes and German GiroCodes instantly in your browser without server uploads."
-    }
-    </script>
-
-    <!-- Monetag MultiTag -->
-    <script src="https://quge5.com/88/tag.min.js" data-zone="316750" async data-cfasync="false"></script>
-
-    <!-- QR কোড তৈরির লাইব্রেরি -->
-    <script src="https://cloudflare.com"></script>
-
-    <style>
-        :root { --primary: #0f172a; --accent: #2563eb; --bg: #f8fafc; --card: #ffffff; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: #1e293b; margin: 0; padding: 0; line-height: 1.6; }
-        header { background: var(--primary); color: #fff; padding: 22px 15px; text-align: center; }
-        header h1 { margin: 0; font-size: 24px; }
-        header p { margin: 6px 0 0; color: #cbd5e1; font-size: 14px; }
-        .lang-switch { margin-top: 14px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
-        .lang-btn { background: #334155; color: #fff; border: 1px solid #475569; padding: 5px 11px; border-radius: 20px; cursor: pointer; font-size: 13px; transition: 0.2s; }
-        .lang-btn.active { background: var(--accent); border-color: var(--accent); font-weight: bold; }
-        .container { max-width: 880px; margin: 25px auto; padding: 0 15px; }
-        .tool-box { background: var(--card); padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
-        @media (max-width: 720px) { .tool-box { grid-template-columns: 1fr; } }
-        .form-group { margin-bottom: 14px; }
-        label { display: block; font-weight: 600; margin-bottom: 5px; font-size: 14px; }
-        input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 15px; box-sizing: border-box; }
-        input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(37,99,235,0.15); }
-        .btn-generate { width: 100%; background: var(--accent); color: #fff; border: none; padding: 12px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; margin-top: 5px; }
-        .btn-generate:hover { background: #1d4ed8; }
-        .qr-section { display: flex; flex-direction: column; align-items: center; justify-content: center; background: #f1f5f9; padding: 20px; border-radius: 10px; text-align: center; }
-        #qrcode { background: #fff; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 15px; min-height: 190px; min-width: 190px; display: flex; align-items: center; justify-content: center; }
-        .btn-download { background: #16a34a; color: #fff; border: none; padding: 11px 22px; font-size: 15px; font-weight: bold; border-radius: 6px; cursor: pointer; display: none; }
-        .btn-download:hover { background: #15803d; }
-        .privacy-badge { font-size: 12px; color: #16a34a; background: #dcfce7; padding: 6px 10px; border-radius: 5px; margin-top: 12px; font-weight: 600; }
-        .seo-article { background: var(--card); padding: 25px; border-radius: 12px; margin-top: 25px; box-shadow: 0 2px 10px rgba(0,0,0,0.04); }
-        .seo-article h2 { color: var(--primary); font-size: 18px; margin-top: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; }
-        .seo-article h2:first-child { margin-top: 0; }
-        .seo-article p { font-size: 14px; color: #475569; }
-        footer { text-align: center; padding: 25px 15px; color: #64748b; font-size: 13px; }
-        footer a { color: #2563eb; text-decoration: none; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="iVjalkXLvBYutIu_K0eG2R_uotiroyV3b9hk2oXOibk" />
+<title>Free SEPA QR Code & GiroCode Generator (EPC)</title>
+<meta name="description" content="Free SEPA QR Code & GiroCode generator (EPC069-12). Create bank transfer QR codes from IBAN without signup. Kostenlos, Gratuit, Gratis.">
+<meta name="keywords" content="SEPA QR code generator, GiroCode erstellen kostenlos, EPC QR code maker, IBAN QR code generator, Générateur QR Code SEPA gratuit">
+<link rel="canonical" href="https://github.io">
+<script src="https://quge5.com" data-zone="316750" async data-cfasync="false"></script>
+<script src="https://cloudflare.com"></script>
+<style>
+body{font-family:sans-serif;background:#f8fafc;color:#1e293b;margin:0;padding:0;line-height:1.6}
+header{background:#0f172a;color:#fff;padding:20px 15px;text-align:center}
+.lang-btn{background:#334155;color:#fff;border:none;padding:6px 12px;margin:4px 2px;border-radius:15px;cursor:pointer}
+.lang-btn.active{background:#2563eb;font-weight:bold}
+.container{max-width:800px;margin:20px auto;padding:0 15px}
+.box{background:#fff;padding:20px;border-radius:10px;box-shadow:0 2px 10px rgba(0,0,0,0.06);display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:700px){.box{grid-template-columns:1fr}}
+input{width:100%;padding:10px;margin:6px 0 12px;border:1px solid #cbd5e1;border-radius:6px;box-sizing:border-box}
+.btn{width:100%;background:#2563eb;color:#fff;border:none;padding:12px;font-size:16px;font-weight:bold;border-radius:6px;cursor:pointer}
+.qr-area{background:#f1f5f9;padding:20px;border-radius:8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#qrcode{background:#fff;padding:12px;border-radius:8px;margin-bottom:12px;min-height:180px;min-width:180px;display:flex;align-items:center;justify-content:center}
+.dl-btn{background:#16a34a;color:#fff;border:none;padding:10px 20px;font-weight:bold;border-radius:6px;cursor:pointer;display:none}
+.seo{background:#fff;padding:20px;border-radius:10px;margin-top:20px;font-size:14px}
+</style>
 </head>
 <body>
-
 <header>
-    <h1 id="title">Free SEPA QR Code & GiroCode Generator</h1>
-    <p id="subtitle">Instant, 100% Free & Local in Your Browser (GDPR Compliant)</p>
-    <div class="lang-switch">
-        <button class="lang-btn active" id="btn-en" onclick="setLang('en')">🇬🇧 English</button>
-        <button class="lang-btn" id="btn-de" onclick="setLang('de')">🇩🇪 Deutsch</button>
-        <button class="lang-btn" id="btn-fr" onclick="setLang('fr')">🇫🇷 Français</button>
-        <button class="lang-btn" id="btn-es" onclick="setLang('es')">🇪🇸 Español</button>
-        <button class="lang-btn" id="btn-it" onclick="setLang('it')">🇮🇹 Italiano</button>
-        <button class="lang-btn" id="btn-nl" onclick="setLang('nl')">🇳🇱 Nederlands</button>
-    </div>
-</header>
-
-<div class="container">
-    <div class="tool-box">
-        <div>
-            <div class="form-group">
-                <label id="lbl-name">Beneficiary Name (Person / Company) *</label>
-                <input type="text" id="recipient" placeholder="John Doe / Company Ltd" required>
-            </div>
-            <div class="form-group">
-                <label id="lbl-iban">IBAN *</label>
-                <input type="text" id="iban" placeholder="DE89 3704 0044 0532 0130 00" required>
-            </div>
-            <div class="form-group">
-                <label id="lbl-bic">BIC / SWIFT (Optional within SEPA)</label>
-                <input type="text" id="bic" placeholder="COBADEFFXXX">
-            </div>
-            <div class="form-group">
-                <label id="lbl-amount">Amount in EUR (€)</label>
-                <input type="number" id="amount" step="0.01" placeholder="49.90">
-            </div>
-            <div class="form-group">
-                <label id="lbl-ref">Payment Reference / Invoice No.</label>
-                <input type="text" id="reference" placeholder="Invoice 2026-001">
-            </div>
-            <button class="btn-generate" id="btn-gen" onclick="generateSEPA()">Generate SEPA QR Code</button>
-        </div>
-
-        <div class="qr-section">
-            <div id="qrcode"><span style="color:#94a3b8; font-size:14px;" id="qr-placeholder">QR Code Preview</span></div>
-            <button class="btn-download" id="btn-dl" onclick="downloadQR()">Download PNG</button>
-            <div class="privacy-badge" id="privacy-text">🔒 100% Private: No banking data is ever sent to any server!</div>
-        </div>
-    </div>
-
-    <!-- গুগল সার্চের জন্য ইউরোপের ৬টি প্রধান ভাষার আর্টিকেল -->
-    <div class="seo-article">
-        <h2>🇬🇧 Free EPC / SEPA QR Code Generator (Europe)</h2>
-        <p>Create official <strong>SEPA QR Codes</strong> (EPC069-12 standard) for invoices, donations, and bank transfers across Europe. Scanning this IBAN QR code with any European banking app (Revolut, N26, ING, Sparkasse, Volksbank, BNP Paribas, Santander, Intesa Sanpaolo) automatically fills in the recipient name, IBAN, amount, and payment reference.</p>
-
-        <h2>🇩🇪 Kostenloser SEPA QR-Code & GiroCode Generator</h2>
-        <p>Erstellen Sie kostenlos und ohne Anmeldung <strong>GiroCodes / SEPA QR-Codes</strong> für Rechnungen und Überweisungen. Alle Daten bleiben zu 100% lokal in Ihrem Browser (DSGVO-konform).</p>
-
-        <h2>🇫🇷 Générateur de QR Code SEPA Gratuit (EPC)</h2>
-        <p>Générez gratuitement un <strong>QR Code SEPA</strong> pour vos factures et virements bancaires. 100% sécurisé et conforme au RGPD, sans inscription.</p>
-
-        <h2>🇪🇸 Generador de Código QR SEPA Gratis</h2>
-        <p>Crea <strong>códigos QR SEPA</strong> gratis y al instante para transferencias bancarias y facturas en euros sin registro y con total privacidad.</p>
-
-        <h2>🇮🇹 Generatore di Codice QR SEPA Gratuito</h2>
-        <p>Genera <strong>codici QR SEPA</strong> gratuitamente per bonifici bancari e fatture in euro. Sicuro al 100% direttamente nel tuo browser.</p>
-
-        <h2>🇳🇱 Gratis SEPA QR Code Generator (EPC)</h2>
-        <p>Maak gratis en direct een <strong>SEPA QR code</strong> aan voor facturen en bankoverschrijvingen in euro's. 100% veilig in uw browser zonder opslag van gegevens.</p>
-    </div>
+<h1 id="t1">Free SEPA QR Code & GiroCode Generator</h1>
+<p id="t2">Instant, 100% Free & Local in Your Browser (GDPR Compliant)</p>
+<div>
+<button class="lang-btn active" id="b-en" onclick="setL('en')">English</button>
+<button class="lang-btn" id="b-de" onclick="setL('de')">Deutsch</button>
+<button class="lang-btn" id="b-fr" onclick="setL('fr')">Français</button>
+<button class="lang-btn" id="b-es" onclick="setL('es')">Español</button>
+<button class="lang-btn" id="b-it" onclick="setL('it')">Italiano</button>
 </div>
-
-<footer>
-    &copy; 2026 Free SEPA QR & GiroCode Generator | <a href="index.html">Home</a>
-</footer>
-
+</header>
+<div class="container">
+<div class="box">
+<div>
+<label id="l1">Beneficiary Name *</label>
+<input type="text" id="name" placeholder="John Doe / Company">
+<label id="l2">IBAN *</label>
+<input type="text" id="iban" placeholder="DE89 3704 0044 0532 0130 00">
+<label id="l3">BIC / SWIFT (Optional)</label>
+<input type="text" id="bic" placeholder="COBADEFFXXX">
+<label id="l4">Amount in EUR (€)</label>
+<input type="number" id="amt" step="0.01" placeholder="49.90">
+<label id="l5">Reference / Invoice No.</label>
+<input type="text" id="ref" placeholder="Invoice 2026-01">
+<button class="btn" id="bg" onclick="makeQR()">Generate SEPA QR Code</button>
+</div>
+<div class="qr-area">
+<div id="qrcode">QR Preview</div>
+<button class="dl-btn" id="bd" onclick="dlQR()">Download PNG</button>
+<p style="font-size:12px;color:#16a34a;margin-top:10px;">100% Private: No data sent to server</p>
+</div>
+</div>
+<div class="seo">
+<h2>Free EPC / SEPA QR Code & GiroCode Generator (Europe)</h2>
+<p>Create official SEPA QR Codes (EPC069-12) for European bank transfers (Revolut, N26, ING, Sparkasse, BNP Paribas, Santander). Kostenloser SEPA QR-Code & GiroCode Generator ohne Anmeldung. Générateur de QR Code SEPA gratuit. Generador de Código QR SEPA gratis. Generatore di Codice QR SEPA gratuito.</p>
+</div>
+</div>
 <script>
-    // Monetag Direct Links
-    const DIRECT_LINK_1 = "https://uplcm.com/4/12251489";
-    const DIRECT_LINK_2 = "https://uplcm.com/4/12229404";
-    let genAdShown = false;
-    let dlAdShown = false;
-
-    let currentLang = 'en';
-
-    const translations = {
-        en: {
-            title: "Free SEPA QR Code & GiroCode Generator",
-            subtitle: "Instant, 100% Free & Local in Your Browser (GDPR Compliant)",
-            name: "Beneficiary Name (Person / Company) *",
-            iban: "IBAN *",
-            bic: "BIC / SWIFT (Optional within SEPA)",
-            amount: "Amount in EUR (€)",
-            ref: "Payment Reference / Invoice No.",
-            gen: "Generate SEPA QR Code",
-            dl: "Download PNG",
+const L1="https://uplcm.com",L2="https://uplcm.com";
+let a1=false,a2=false,cur='en';
+const tr={
+en:{t1:"Free SEPA QR Code & GiroCode Generator",t2:"100% Free & Local in Browser",l1:"Beneficiary Name *",l2:"IBAN *",l3:"BIC (Optional)",l4:"Amount EUR (€)",l5:"Reference",bg:"Generate SEPA QR Code",bd:"Download PNG"},
+de:{t1:"Kostenloser SEPA QR-Code & GiroCode Generator",t2:"100% Kostenlos & Lokal (DSGVO)",l1:"Empfängername *",l2:"IBAN *",l3:"BIC (Optional)",l4:"Betrag in EUR (€)",l5:"Verwendungszweck",bg:"QR-Code Erstellen",bd:"PNG Herunterladen"},
+fr:{t1:"Générateur de QR Code SEPA Gratuit",t2:"100% Gratuit & Local (RGPD)",l1:"Nom du bénéficiaire *",l2:"IBAN *",l3:"BIC (Optionnel)",l4:"Montant EUR (€)",l5:"Référence",bg:"Générer le QR Code",bd:"Télécharger PNG"},
+es:{t1:"Generador de Código QR SEPA Gratis",t2:"100% Gratis y Local",l1:"Beneficiario *",l2:"IBAN *",l3:"BIC (Opcional)",l4:"Importe EUR (€)",l5:"Concepto",bg:"Generar Código QR",bd:"Descargar PNG"},
+it:{t1:"Generatore di Codice QR SEPA Gratuito",t2:"100% Gratuito e Locale",l1:"Beneficiario *",l2:"IBAN *",l3:"BIC (Opzionale)",l4:"Importo EUR (€)",l5:"Causale",bg:"Genera Codice QR",bd:"Scarica PNG"}
+};
+function setL(l){if(!tr[l])l='en';cur=l;['en','de','fr','es','it'].forEach(x=>document.getElementById('b-'+x).classList.toggle('active',x===l));const d=tr[l];['t1','t2','l1','l2','l3','l4','l5','bg','bd'].forEach(k=>document.getElementById(k).innerText=d[k]);}
+window.onload=()=>{const u=(navigator.language||'en').slice(0,2).toLowerCase();if(tr[u])setL(u);};
+function makeQR(){
+const n=document.getElementById('name').value.trim(),ib=document.getElementById('iban').value.replace(/\s+/g,'').toUpperCase(),bc=document.getElementById('bic').value.replace(/\s+/g,'').toUpperCase(),av=parseFloat(document.getElementById('amt').value),am=(!isNaN(av)&&av>0)?"EUR"+av.toFixed(2):"",rf=document.getElementById('ref').value.trim();
+if(!n||ib.length<15){alert("Please enter Name & valid IBAN");return;}
+if(!a1){window.open(L1,'_blank');a1=true;}
+const txt=["BCD","002","1","SCT",bc,n.slice(0,70),ib,am,"","",rf.slice(0,140)].join("\n");
+const box=document.getElementById('qrcode');box.innerHTML="";
+new QRCode(box,{text:txt,width:180,height:180});
+document.getElementById('bd').style.display="inline-block";
+}
+function dlQR(){
+if(!a2){window.open(L2,'_blank');a2=true;}
+const img=document.querySelector('#qrcode img');
+if(img){const a=document.createElement('a');a.href=img.src;a.download='SEPA-QR.png';a.click();}
+}
+</script>
+</body>
+</html>
